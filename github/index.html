@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./style.css">
+  <title>林晶翔 - 自己紹介</title>
+  <style>
+    body {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", YuGothic, "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Arial, "メイリオ", Meiryo, sans-serif;
+  color: #806342;
+  background-color: #000;
+}
+    .container {
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    #cursorFollower {
+      position: absolute;
+      background-color: red;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: all 0.1s ease;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+  <div id="cursorFollower"></div>
+  <div class="container">
+    <h1>自己紹介</h1>
+    <p>私の名前は林晶翔で、生年月日は2004年6月4日生まれです。</p>
+    <p>現在は京都デザイン＆テクノロジー専門学校に在学しています</p>
+    <p>作るのは難しい</p>
+</div>
+
+
+  <script>
+    var follower = document.getElementById('cursorFollower');
+    document.addEventListener('mousemove', function(e) {
+      follower.style.left = e.pageX + 'px';
+      follower.style.top = e.pageY + 'px';
+    });
+  </script>
+</body>
+</html>
