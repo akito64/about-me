@@ -1,11 +1,13 @@
 const canvas = document.getElementById('myCanvas');
 const ctx = canvas.getContext('2d');
 
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+function setCanvasSize() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
 
 let balls = [];
-const numOfBalls = 50;  // number of balls
+const numOfBalls = 50;
 
 class Ball {
     constructor(canvas) {
@@ -24,7 +26,18 @@ class Ball {
         ctx.fill();
     }
 
+    // ... [コードは変わっていません]
+
     update() {
+        // 画面サイズが変わると、ボールがキャンバスの外側にいる可能性があるため、
+        // ボールがキャンバスの外側にいる場合にキャンバスの内側に戻す
+        if (this.x > this.canvas.width) {
+            this.x = this.canvas.width - this.radius;
+        }
+        if (this.y > this.canvas.height) {
+            this.y = this.canvas.height - this.radius;
+        }
+        
         if (this.x + this.radius > this.canvas.width || this.x - this.radius < 0) {
             this.vx = -this.vx;
         }
@@ -37,7 +50,8 @@ class Ball {
 }
 
 function createBalls() {
-    for(let i = 0; i < numOfBalls; i++) {
+    balls = []; // 既存のボールをクリアしてから新しいボールを追加
+    for (let i = 0; i < numOfBalls; i++) {
         let ball = new Ball(canvas);
         balls.push(ball);
     }
@@ -45,12 +59,20 @@ function createBalls() {
 
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    for(let i = 0; i < balls.length; i++) {
+    for (let i = 0; i < balls.length; i++) {
         balls[i].draw(ctx);
         balls[i].update();
     }
     requestAnimationFrame(animate);
 }
 
+// サイズを設定して、初回のボールを作成
+setCanvasSize();
 createBalls();
 animate();
+
+// ウィンドウサイズが変わるたびにキャンバスのサイズを更新
+window.addEventListener('resize', function () {
+    setCanvasSize();
+    createBalls(); // キャンバスサイズが変わるたびにボールの位置をリセット
+});

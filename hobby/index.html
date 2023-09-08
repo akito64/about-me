@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="comon.css" />
+    <link rel="stylesheet" href="block.css" />
+    <link rel="stylesheet" href="text.css" />
+    <title>趣味</title>
+  </head>
+  <body>
+    <div id="cursor"></div>
+    <canvas id="myCanvas"></canvas>
+    <div class="container">
+      <h1>好きなこと</h1>
+      <div class="hobby-item">
+        <h2>麻雀</h2>
+        <p class="description">
+          きっかけは高校生の時に祖父から教えてもらったことがきっかけです
+        </p>
+      </div>
+      <div class="hobby-item">
+        <h2>FPSゲーム</h2>
+        <p class="description">
+          FPS「ファーストパーソン・シューティングゲーム」の略で主に敵を倒していくゲームです。
+          その中でも最近は<a link="link-block" href="https://playvalorant.com/ja-jp/?gad=1&gclid=EAIaIQobChMI-qKxwMOXgQMVfwl7Bx2dQQJDEAAYASAAEgIQefD_BwE&gclsrc=aw.ds">
+            Valorant
+          </a>というゲームにハマってます
+
+        </p>
+      </div>
+      <div class="hobby-item">
+        <h2>食べること</h2>
+        <p class="description">食べることが好きで色んな所に</p>
+      </div>
+      <div class="hobby-item">
+        <h2>寝ること</h2>
+        <p class="description">
+          この４つの中で一番好きなことです！
+          一日の疲れがすべて吹っ飛ぶ幸せな時間です。　自分は一回も起こされなかったら15時間は平気で寝れる体質なので、
+          夜寝て起きたらもう夕方とか夜何てこと休日だと平気であります
+        </p>
+      </div>
+      <a class="link-block" href="../index.html">戻る</a>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      var cursor = document.getElementById("cursor");
+      document.onmousemove = function (e) {
+        cursor.style.left = e.pageX - 5 + "px";
+        cursor.style.top = e.pageY - 5 + "px";
+      };
+    </script>
+  </body>
+</html>
