@@ -1,0 +1,10 @@
+.school-item img {
+    margin-top: 10px;
+    width: 250px; /* 例として150pxに設定。必要に応じて変更してください。 */
+    height: 200px; /* 例として100pxに設定。必要に応じて変更してください。 */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover; /* 画像のアスペクト比を維持しつつ、指定されたサイズにフィットさせる */
+  }
+  

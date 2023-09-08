@@ -1,0 +1,49 @@
+/* 全体のページのスタイル設定 */
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f4f4f4;
+}
+
+form {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* その他のスタイル */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-col {
+    width: 100%;
+}
+
+.form-btn {
+    text-align: center;
+}
+
+.container {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.link-block {
+    text-decoration: none;
+    color: #007bff;
+    border: 1px solid #007bff;
+    padding: 5px 15px;
+    border-radius: 4px;
+}
