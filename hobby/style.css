@@ -1,0 +1,21 @@
+.hobby-item {
+  border-bottom: 2px solid #e0e0e0; /* 境界線を追加 */
+  padding-bottom: 20px; /* 下のパディングを追加 */
+  margin-bottom: 20px; /* 下のマージンを追加 */
+}
+
+.hobby-item:last-child {
+  border-bottom: none; /* 最後の趣味アイテムの境界線を削除 */
+}
+
+.hobby-item {
+  position: relative; /* これを追加して、子要素の絶対位置を基準にします */
+}
+
+.hobby-item img {
+  width: 22%; /* 画像のサイズ調整、これは例ですので必要に応じて変更してください */
+  height: auto; /* 縦横比を維持 */
+  position: absolute; /* 絶対位置を指定 */
+  top: -20px; /* 上からの位置。この値は調整してください */
+  right: 0; /* 右端に配置 */
+}
